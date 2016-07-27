@@ -1,0 +1,247 @@
+@CHARSET "ISO-8859-1";
+*{
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: #EEEEEE;
+	font-family: Verdana, Helvetica, Geneva, Arial, sans-serif;
+	font-size: small;
+    font-weight: 100;
+}
+
+.progress-bar {
+	position: absolute;
+	right: 50%;
+	top: 40%;
+}
+
+h1, h2 {
+	color: #333333;
+}
+
+select {
+	font-size: 10px;
+	width: 210px;
+	height: 3em;
+	padding: 5px;
+}
+
+select[multiple] {
+	height: 7em;
+	padding: 5px;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+#user-form,  #user-form-update, #addlocation-form, .logIn, #change-form {
+	font-size: 11px;
+	border-color: #EEEEEE;
+	border-width: 4px;
+	border-style: dashed;
+	background-color: #E5E5E5;
+	padding: 25px;
+	padding-top: 0px;
+	padding-left: 80px;
+	padding-right: 30px;
+    margin-top: 0.1%;
+	margin-left: 0.5%;
+	margin-right: 0.5%;
+	background-image: url(../images/cisco_logo.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+	box-shadow: 10px 10px 5px #888888;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+form input[type="text"], input[type="password"] {
+	height: 20px;
+	width: 80%;
+	padding: 5px;
+}
+
+form input:focus {
+	outline: none !important;
+	border: 1px solid #5A5097;
+	box-shadow: 0 0 5px #5A5097;
+}
+
+form input[type="submit"] {
+	background-color: #5A5097;
+	color: white;
+	font-size: 1.3em;
+	font-weight: bold;
+	border: none;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+}
+
+form input[type="button"] {
+	background-color: #5A5097;
+	color: white;
+	font-size: 1.3em;
+	font-weight: bold;
+	border: none;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+}
+
+
+form a {
+	display: inline-block;
+}
+
+form a img {
+	display: block;
+	height: auto;
+}
+
+form span.error {
+	color: red;
+	font-size: small;
+}
+
+#header {
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	background-color: #5A5097;
+    box-shadow:1px 1px 3px 1px #6E6D6D;
+    font-size: 10px;
+}
+
+#main {
+	margin-top: 10%;
+	width: 100%;
+}
+
+#main_adduser {
+	margin: auto;
+	margin-top: 50%;
+	margin-left: 130%;
+	margin-right: 140%;
+}
+
+.header-pic {
+    height: 1%;
+    width: 1%;
+    vertical-align:middle;
+}
+
+#home-img {
+    height: 1.5%;
+    width: 1.5%;
+}
+
+.image-add {
+    height: 3%;
+    width: 3%;
+}
+
+#footer {
+	left: 0px;
+	bottom: 0px;
+	margin-top: 1%;
+	width: 100%;	
+}
+
+.logIn, #change-form {
+	margin-left: 35%;
+	margin-right: 40%;
+}
+
+.admin a:hover{
+		background-color: none;
+}
+
+#main img {
+	width: 25%;
+	height: auto;
+}
+
+.headerImage {
+	padding-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 15%;
+}
+
+.headerHeading {
+	/*margin-top: 5px;*/
+	margin-left: 15%;
+}
+
+#header span.addUser a {
+	display: inline-block;
+	text-align: center;
+}
+
+#header span.addUser a img {
+	display: block;
+}
+
+a {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+
+span {
+	font-weight: bold;
+}
+
+span.admin {
+	color: white;
+}
+
+span.userInfo {
+	color: white;
+	margin-right: 10px;
+	font-weight: bold;
+	padding-bottom: 15px;
+}
+
+span.signup-span, span.signin-span, span.home-span {
+	margin-left: 30%;
+}
+span.admin {
+	vertical-align: middle;
+}
+span.admin, span.user-name-span, span.teammates-span, span.logout-span {
+	margin-left: 1em;
+}
+
+span a {
+	text-decoration:none;
+	padding: 0 0.2em 0 0.2em;
+	color: white;
+}
+
+span a:hover {
+	/*background-color: #4B0082;*/
+}
+
+.heading {
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold; 
+}
+
+.forgotPassword {
+	font-size: 10px;
+}
+
+span.select {
+	font-weight: normal;
+}
+
+table tr td:empty {
+	width: 150px;
+}
+
+#footer p {
+	margin-left: 5px;
+}

@@ -1,0 +1,42 @@
+{% extends "main.html" %}
+{% block header_script %}
+	<script type="application/javascript" src="{{static_url('js/highcharts/js/highcharts.js')}}"></script>
+	<script type="application/javascript" src="{{static_url('js/highcharts/js/highcharts-3d.js')}}"></script>
+	<script type="application/javascript" src="{{static_url('js/highcharts/js/highcharts-more.js')}}"></script>
+	<script type="application/javascript" src="{{static_url('js/highcharts/js/modules/exporting.js')}}"></script>
+	<script type="application/javascript" src="{{static_url('js/highcharts/js/modules/solid-gauge.js')}}"></script>
+	<script type="application/javascript" src="{{static_url('js/helper.js')}}"></script>
+	<script type="application/javascript" src="{{static_url('js/chart_engine.js')}}"></script>
+	<script type="application/javascript" src="{{static_url('js/chart_generator.js')}}"></script>
+{% end %}
+{% block user_info %}
+	{% try %}
+		{% if len(credentials) > 0 %}
+			<span class="home-span">
+				<a href="/main" id="home" title="Home">
+					<img class="header-pic" id="home-img" src="{{static_url('icons/menu_icon_082.png')}}" alt="Home img" />
+				</a>
+			</span>
+			<span class="admin">
+				<a href="/admin" id="admin" title="Admin">
+					<img class="header-pic" id="admin-img" src="{{static_url('icons/menu_icon_045.png')}}" alt="User Data Log" />
+				</a>
+			</span>
+			<span class="userInfo">
+				<span class="user-name-span"><a href="/myprofile">{{credentials['firstname']}} {{credentials['lastname']}}</a></span>
+				<span class="logout-span"><a href="/logout">Sign out</a></span>
+                {% if len(credentials2) > 0 %}
+                    <span class="comrade-name-span" style="color: yellow"> ({{credentials2['firstname']}} {{credentials2['lastname']}})</span>
+                {% end %}
+			</span>
+		{% end %}
+	{% except %}
+	{% end %}
+{% end %}
+{% block content %}
+	<div id="main">
+		<p>{{successMsg}}</p>
+		<div id="icon-container">
+		</div>
+	</div>
+{% end %}

@@ -1,0 +1,90 @@
+{% extends "mainPage.html" %}
+{% block content %}
+	<div id="dashboard-container">	
+		<div id="left-panel-main" style="display: none">
+			<div class="progress-bar" id="progress-right" style="display: none"><img class="loading-img" src="{{static_url('icons/loading11.gif')}}" alt="Loading..." height="100" width="80" /></div>
+            <div class="menu" id="menu-1">
+                <h4 class="menu-container-header" id="">Product/Service Dashboards</h4><hr/><br/>
+                <div class="menu-container" id="menu-container-0">
+                    <a href="#" id="prod-ser"><img  class="menu-img" src="{{static_url('icons/menu_icon_030.png')}}" alt="image" />
+                        <span class="menu-span">Products+Services</span>
+                    </a>
+                </div>
+                <div class="menu-container" id="menu-container-1">
+                    <a href="#" id="product"><img  class="menu-img" src="{{static_url('icons/menu_icon_008.png')}}" alt="image" />
+                        <span class="menu-span">Products</span>
+                    </a>
+                </div>
+                <div class="menu-container" id="menu-container-2">
+                    <a href="#" id="service"><img  class="menu-img" src="{{static_url('icons/menu_icon_046.png')}}" alt="image" />
+                    <span class="menu-span">Services</span>
+                    </a>
+                </div>
+            </div>
+            <div id="maximize-button">
+                <a href="#" id="unhide-inactive-menu">
+                    <img  class="button-img" src="{{static_url('icons/icon_down_arrow.png')}}" alt="image" />
+                    <span class="button-span">More...</span>
+                </a>
+            </div>
+            <div class="" id="inactive" style="display: none">
+                <div class="menu" id="menu-2">
+                    <h4 class="menu-container-header" id="">Sub SCMS Dashboards</h4><hr/><br/>
+                    <div class="menu-container" id="menu-container-3">
+                        <a href="#"><img  class="menu-img" src="{{static_url('icons/menu_icon_024.png')}}" alt="image" />
+                            <span class="menu-span">Select Accounts</span>
+                        </a>
+                    </div>
+                    <div class="menu-container" id="menu-container-4">
+                        <a href="#"><img  class="menu-img" src="{{static_url('icons/menu_icon_026.png')}}" alt="image" />
+                        <span class="menu-span">Mid-Market Accounts</span>
+                        </a>
+                    </div>
+                    <div class="menu-container" id="menu-container-5">
+                        <a href="#"><img  class="menu-img" src="{{static_url('icons/menu_icon_027.png')}}" alt="image" />
+                        <span class="menu-span">Geo-Named Accounts</span>
+                        </a>
+                    </div>
+                    <div class="menu-container" id="menu-container-6">
+                        <a href="#"><img  class="menu-img" src="{{static_url('icons/menu_icon_020.png')}}" alt="image" />
+                        <span class="menu-span">Geo-Non Named Accounts</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="menu" id="menu-3">
+                    <h4 class="menu-container-header" id="">BI Dashboards</h4><hr/><br/>
+                    <div class="menu-container" id="menu-container-7">
+                        <a href="#"><img  class="menu-img" src="{{static_url('icons/menu_icon_001.png')}}" alt="image" />
+                            <span class="menu-span">Customer Business Intelligence</span>
+                        </a>
+                    </div>
+                    <div class="menu-container" id="menu-container-8">
+                        <a href="#"><img  class="menu-img" src="{{static_url('icons/menu_icon_002.png')}}" alt="image" />
+                        <span class="menu-span">Partner Business Intelligence</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="menu" id="menu-4">
+                    <h4 class="menu-container-header" id="">Scorecards</h4><hr/><br/>
+                    <div class="menu-container" id="menu-container-9">
+                        <a href="#"><img  class="menu-img" src="{{static_url('icons/menu_icon_056.png')}}" alt="image" />
+                            <span class="menu-span">TAM/VSAM Scorecard</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="minimize-button" style="display: none">
+                <a href="#" id="hide-inactive-menu">
+                    <img  class="button-img" src="{{static_url('icons/icon_up_arrow.png')}}" alt="image" />
+                    <span class="button-span">Less...</span>
+                </a>
+            </div>
+		</div>
+		<div id="right-panel-main" style="display: none">
+			<div class="progress-bar" id="progress-right" style="display: none"><img class="loading-img" src="{{static_url('icons/loading11.gif')}}" alt="Loading..." height="100" width="80" /></div>
+		</div>
+		<div id="middle-panel-main" style="display: none">
+		</div>
+        <div class="progress-bar" id="progress" style="display: none"><img class="loading-img" src="{{static_url('icons/loading11.gif')}}" alt="Loading..." height="100" width="80" /></div>
+	</div>
+{% end %}

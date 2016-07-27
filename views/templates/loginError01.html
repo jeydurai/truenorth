@@ -1,0 +1,21 @@
+{% extends "main.html" %}
+{% block user_info %}
+	<span class="signup-span">
+		<span><a href="/signup">Sign up </a></span>
+	</span>
+{% end %}
+{% block content %}
+	<div id="main">
+		<form action="/main" method="POST" class="logIn">
+			{% raw xsrf_form_html() %}
+			<h2>Sign in</h2><br />
+			<a href=""><img src="{{static_url('images/profile_image.png')}}" alt="Profile Image" href="" /></a><br /><br />
+			<label for="labelUserName">Username:</label><br /><input type="text" name="userName" value="" autofocus/><br /><br />
+			<label for="labelPassword">Password:</label><br /><input type="password" name="password" /><br />
+			<input type="hidden" id="hidden" name="hidden" value="login" />
+            <span class="error"><label>User does not exist</label></span><br />
+			<a class="forgotPassword" href="/admin/profile"><label for="forgot">Forgot Password?</label></a><br /><br />
+			<input type="submit" name="submitSignIn" value="Sign in" />
+		</form>
+	</div>
+{% end %}

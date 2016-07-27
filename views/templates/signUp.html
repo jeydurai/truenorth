@@ -1,0 +1,119 @@
+{% extends "main.html" %}
+{% block user_info %}
+	<span class="signin-span">
+		<span><a href="/login">Sign in </a></span>
+	</span>
+{% end %}
+{% block content %}
+	<div id="container">
+	<div id="main_signup">
+		<br /><span id="success-message" style="display: none">{{message}}</span>
+		<form action="#" method="POST" id="user-form">
+			{% raw xsrf_form_html() %}
+			<h2>Sign up</h2><br />
+			<table id="signup">
+				<tr><td colspan="4"><div id="error" style="display: none"></div></td></tr>
+				<tr>
+					<td>Username:<br /><input type="text" name="userName" id="userName" tabIndex="1" value="" autofocus/>
+						<span id="span-exist-or-not" style="display: none">
+							<img id="img-exist-or-not" alt="Exists or Not" src="" />
+						</span> <br /><br />
+					</td>
+					<td>Designation:
+						<span class=select><br />
+							<select id="designation-option" tabIndex="8">
+								<option selected>Select Designation</option>
+							</select>
+						</span><br /><br />
+					</td>
+					<td rowspan="8" class="select">Sales Agents:
+						<span class=select><br />
+							<select id="salesagent-option" multiple="multiple" tabIndex="18">
+							</select>
+						</span><br />
+						<p><input type="checkbox" name="salesagent-selectall" id="salesagent-selectall" tabIndex="19" />
+						<span id="select-all">Select All</span></p>
+						<br />
+					</td>
+				</tr>
+				<tr>
+					<td>First Name:<br /><input type="text" name="firstName" id="firstName" tabIndex="2" value="" /><br /><br /></td>
+					<td>Sub SCMS:
+						<span class=select><br />
+							<select id="subscms-option" multiple="multiple" tabIndex="10">
+							</select><br />
+						</span>
+						<p><input type="checkbox" name="subscms-selectall" id="subscms-selectall" tabIndex="11"/>
+						<span id="select-all">Select All</span></p>
+						<br />
+					</td>
+				</tr>
+				<tr>
+					<td>Last Name:<br /><input type="text" name="lastName" id="lastName" tabIndex="3" value="" /><br /><br /></td>
+					<td>GTMu:
+						<span class=select><br />
+							<select id="gtmu-option" multiple="multiple"  tabIndex="12">
+							</select>
+						</span>
+						<p><input type="checkbox" name="gtmu-selectall" id="gtmu-selectall" tabIndex="13" />
+						<span id="select-all">Select All</span></p>
+						<br />
+					</td>
+				</tr>
+				<tr>
+					<td>Password:<br /><input type="password" name="password" id="password" tabIndex="4" /><br /><br /></td>
+					<td>Region:
+						<span class=select><br />
+							<select id="region-option" multiple="multiple" tabIndex="14">
+							</select>
+						</span>
+						<p><input type="checkbox" name="region-selectall" id="region-selectall" tabIndex="15" />
+						<span id="select-all">Select All</span></p>
+					</td>
+				</tr>
+				<tr>
+					<td>Confirm Password:<br /><input type="password" name="confirmPassword" id="confirmPassword" tabIndex="5" /><br /><br /></td>
+					<td rowspan="4">Sales_Level_6:
+						<span class=select><br />
+							<select id="sl6-option" multiple="multiple" tabIndex="16">
+							</select>
+						</span><br />
+						<p><input type="checkbox" name="sl6-selectall" id="sl6-selectall" tabIndex="17" />
+						<span id="select-all">Select All</span></p>
+						<br /><br />
+					</td>
+				</tr>
+				<tr>
+					<td>Email:<br /><input type="text" name="email" id="email" value="" tabIndex="6" /><br /><br /></td>
+				</tr>
+				<tr>
+					<td>
+						Reporting To:<br /><input type="text" name="reportingTo" id="reportingTo" value="" tabIndex="7" />
+						<span id="span-rpt-exist-or-not" style="display: none">
+							<img id="img-rpt-exist-or-not" alt="Exists or Not" src="" />
+						</span> <br /><br />
+					</td>
+				</tr>
+				<tr>
+					<td>Location:
+						<span class=select><br />
+							<select id="location-option" tabIndex="8">
+								<option selected>Select Location</option>
+							</select>
+						</span><br /><br />
+					</td>
+				</tr>
+			</table>
+			{% try %}
+				{% if len(err) > 0 %}
+					<span class="error"><label>{{ err }}</label></span><br />
+				{% end %}
+			{% except %}
+			{% end %}
+			<br />
+			<input type="button" id="signup-user" name="submit-user" value="Sign up" />
+			<input type="button" id="reset" name="reset" value="Reset" />
+		</form>
+	</div>
+	</div>
+{% end %}

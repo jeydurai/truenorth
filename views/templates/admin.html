@@ -1,0 +1,400 @@
+{% module User(user) %}
+{% module Location(location) %}
+	{% extends "main.html" %}
+	{% block user_info %}
+		{% try %}
+			{% if len(credentials) > 0 %}
+			<span class="home-span">
+				<a href="/main" id="home" title="Home">
+					<img class="header-pic" id="home-img" src="{{static_url('icons/menu_icon_082.png')}}" alt="Home img" />
+				</a>
+			</span>
+			<span class="userInfo">
+				<span class="user-name-span"><a href="/myprofile">{{credentials['firstname']}} {{credentials['lastname']}}</a></span>
+				<span class="logout-span"><a href="/logout">Sign out</a></span>
+			</span>
+			{% end %}
+		{% except %}
+		{% end %}
+	{% end %}
+	{% block content %}
+    <div id="admin-content">
+		<div id="edituser" style="display: none">
+			<form action="#" method="POST" class="user-form">
+				{% raw xsrf_form_html() %}
+				<h2>Approve/Reject User</h2><br />
+				<input type="hidden" id="hidden-edit" value="" />
+				<table>
+					<tr><td colspan="4"><div id="error-edit" style="display: none"></div></td></tr>
+					<tr>
+						<td>Username:<br /><input type="text" name="userName-edit" id="userName-edit" tabIndex="1" value="" autofocus/>
+						</td>
+						<td></td>
+						<td>Designation:<br /><input type="text" name="designation-edit" id="designation-edit" tabIndex="9" value="" /><br /><br /></td>
+						<td rowspan="8"></td>
+						<td rowspan="8" class="select">Sales Agents:
+							<span class=select><br />
+								<select id="salesagent-option-edit" multiple="multiple" tabIndex="18">
+								</select>
+							</span><br />
+							<p><input type="checkbox" name="salesagent-selectall-edit" id="salesagent-selectall-edit" tabIndex="19" />
+							<span id="select-all">Select All</span></p>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>First Name:<br /><input type="text" name="firstName-edit" id="firstName-edit" tabIndex="2" value="" /><br /><br /></td>
+						<td></td>
+						<td>Sub SCMS:
+							<span class=select><br />
+								<select id="subscms-option-edit" multiple="multiple" tabIndex="10">
+								</select><br />
+							</span>
+							<p><input type="checkbox" name="subscms-selectall-edit" id="subscms-selectall-edit" tabIndex="11"/>
+							<span id="select-all">Select All</span></p>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>Last Name:<br /><input type="text" name="lastName-edit" id="lastName-edit" tabIndex="3" value="" /><br /><br /></td>
+						<td></td>
+						<td>GTMu:
+							<span class=select><br />
+								<select id="gtmu-option-edit" multiple="multiple"  tabIndex="12">
+								</select>
+							</span>
+							<p><input type="checkbox" name="gtmu-selectall-edit" id="gtmu-selectall-edit" tabIndex="13" />
+							<span id="select-all">Select All</span></p>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>Email:<br /><input type="text" name="email-edit" id="email-edit" value="" tabIndex="6" /><br /><br /></td>
+						<td></td>
+						<td>Region:
+							<span class=select><br />
+								<select id="region-option-edit" multiple="multiple" tabIndex="14">
+								</select>
+							</span>
+							<p><input type="checkbox" name="region-selectall-edit" id="region-selectall-edit" tabIndex="15" />
+							<span id="select-all">Select All</span></p>
+						</td>
+					</tr>
+					<tr>
+						<td>Reporting To:<br /><input type="text" name="reportingTo-edit" id="reportingTo-edit" value="" tabIndex="7" /><br /><br /></td>
+						<td rowspan="4"></td>
+						<td rowspan="4">Sales_Level_6:
+							<span class=select><br />
+								<select id="sl6-option-edit" multiple="multiple" tabIndex="16">
+								</select>
+							</span><br />
+							<p><input type="checkbox" name="sl6-selectall-edit" id="sl6-selectall-edit" tabIndex="17" />
+							<span id="select-all">Select All</span></p>
+							<br /><br />
+						</td>
+					</tr>
+					<tr>
+						<td>Location:
+							<span class=select><br />
+								<select id="location-option-edit" tabIndex="8">
+									<option selected>Select Location</option>
+								</select>
+							</span><br /><br />
+						</td>
+					</tr>
+				</table>
+				<br />
+				<input type="button" id="approve-user" name="approve-user" value="Approve" />
+				<input type="button" id="reject-user" name="reject-user" value="Reject" />
+				<input type="button" id="button-cancel-edit" name="button-cancel-edit" value="Cancel" />
+			</form>
+		</div>
+
+		<div id="adduser" style="display: none">
+			<form action="#" method="POST" class="user-form">
+				{% raw xsrf_form_html() %}
+				<h2>Add User</h2><br />
+				<input type="hidden" id="hidden" value="" />
+				<table>
+					<tr><td colspan="4"><div id="error" style="display: none"></div></td></tr>
+					<tr>
+						<td>Username:<br /><input type="text" name="userName" id="userName" tabIndex="1" value="" autofocus/>
+							<span id="span-exist-or-not" style="display: none">
+								<img id="img-exist-or-not" alt="Exists or Not" src="" />
+							</span> <br /><br />
+						</td>
+						<td></td>
+						<td>Designation:<br /><input type="text" name="designation" id="designation" tabIndex="9" value="" /><br /><br /></td>
+						<td rowspan="8"></td>
+						<td rowspan="8" class="select">Sales Agents:
+							<span class=select><br />
+								<select id="salesagent-option" multiple="multiple" tabIndex="18">
+								</select>
+							</span><br />
+							<p><input type="checkbox" name="salesagent-selectall" id="salesagent-selectall" tabIndex="19" />
+							<span id="select-all">Select All</span></p>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>First Name:<br /><input type="text" name="firstName" id="firstName" tabIndex="2" value="" /><br /><br /></td>
+						<td></td>
+						<td>Sub SCMS:
+							<span class=select><br />
+								<select id="subscms-option" multiple="multiple" tabIndex="10">
+								</select><br />
+							</span>
+							<p><input type="checkbox" name="subscms-selectall" id="subscms-selectall" tabIndex="11"/>
+							<span id="select-all">Select All</span></p>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>Last Name:<br /><input type="text" name="lastName" id="lastName" tabIndex="3" value="" /><br /><br /></td>
+						<td></td>
+						<td>GTMu:
+							<span class=select><br />
+								<select id="gtmu-option" multiple="multiple"  tabIndex="12">
+								</select>
+							</span>
+							<p><input type="checkbox" name="gtmu-selectall" id="gtmu-selectall" tabIndex="13" />
+							<span id="select-all">Select All</span></p>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td class="password">Password:<br /><input type="password" name="password" id="password" tabIndex="4" /><br /><br /></td>
+						<td></td>
+						<td>Region:
+							<span class=select><br />
+								<select id="region-option" multiple="multiple" tabIndex="14">
+								</select>
+							</span>
+							<p><input type="checkbox" name="region-selectall" id="region-selectall" tabIndex="15" />
+							<span id="select-all">Select All</span></p>
+						</td>
+					</tr>
+					<tr>
+						<td class="password">Confirm Password:<br /><input type="password" name="confirmPassword" id="confirmPassword" tabIndex="5" /><br /><br /></td>
+						<td rowspan="4"></td>
+						<td rowspan="4">Sales_Level_6:
+							<span class=select><br />
+								<select id="sl6-option" multiple="multiple" tabIndex="16">
+								</select>
+							</span><br />
+							<p><input type="checkbox" name="sl6-selectall" id="sl6-selectall" tabIndex="17" />
+							<span id="select-all">Select All</span></p>
+							<br /><br />
+						</td>
+					</tr>
+					<tr>
+						<td>Email:<br /><input type="text" name="email" id="email" value="" tabIndex="6" /><br /><br /></td>
+					</tr>
+					<tr>
+						<td>Reporting To:<br /><input type="text" name="reportingTo" id="reportingTo" value="" tabIndex="7" />
+							<span id="span-rpt-exist-or-not" style="display: none">
+								<img id="img-rpt-exist-or-not" alt="Exists or Not" src="" />
+							</span> <br /><br />
+						</td>
+					</tr>
+					<tr>
+						<td>Location:
+							<span class=select><br />
+								<select id="location-option" tabIndex="8">
+									<option selected>Select Location</option>
+								</select>
+							</span><br /><br />
+						</td>
+					</tr>
+				</table>
+				<br />
+				<input type="button" id="submit-user-add" name="submit-user-add" value="Add" />
+				<input type="button" id="reset-add" name="reset-add" value="Reset" />
+				<input type="button" id="button-cancel" name="button-cancel" value="Cancel" />
+			</form>
+		</div>
+
+
+		<div id="updateuser" style="display: none">
+			<form action="#" method="POST" class="user-form">
+				{% raw xsrf_form_html() %}
+				<h2>Update User</h2><br />
+				<input type="hidden" id="hidden-update" value="" />
+				<div class="progress"></div>
+				<table>
+					<tr><td colspan="4"><div id="error-update" style="display: none"></div></td></tr>
+					<tr>
+						<td>Username:<br /><input type="text" name="userName-update" id="userName-update" tabIndex="1" value="" autofocus/>
+							<span id="span-exist-or-not-update" style="display: none">
+								<img id="img-exist-or-not-update" alt="Exists or Not" src="" />
+							</span> <br /><br />
+						</td>
+						<td></td>
+						<td>Designation:<br /><input type="text" name="designation-update" id="designation-update" tabIndex="9" value="" /><br /><br /></td>
+						<td rowspan="8"></td>
+						<td rowspan="8" class="select">Sales Agents:
+							<span class=select><br />
+								<select id="salesagent-option-update" multiple="multiple" tabIndex="18">
+								</select>
+							</span><br />
+							<p><input type="checkbox" name="salesagent-selectall-update" id="salesagent-selectall-update" tabIndex="19" />
+							<span id="select-all">Select All</span></p>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>First Name:<br /><input type="text" name="firstName-update" id="firstName-update" tabIndex="2" value="" /><br /><br /></td>
+						<td></td>
+						<td>Sub SCMS:
+							<span class=select><br />
+								<select id="subscms-option-update" multiple="multiple" tabIndex="10">
+								</select><br />
+							</span>
+							<p><input type="checkbox" name="subscms-selectall-update" id="subscms-selectall-update" tabIndex="11"/>
+							<span id="select-all">Select All</span></p>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>Last Name:<br /><input type="text" name="lastName-update" id="lastName-update" tabIndex="3" value="" /><br /><br /></td>
+						<td></td>
+						<td>GTMu:
+							<span class=select><br />
+								<select id="gtmu-option-update" multiple="multiple"  tabIndex="12">
+								</select>
+							</span>
+							<p><input type="checkbox" name="gtmu-selectall-update" id="gtmu-selectall-update" tabIndex="13" />
+							<span id="select-all">Select All</span></p>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td class="password">Password:<br /><input type="password" name="password-update" id="password-update" tabIndex="4" /><br /><br /></td>
+						<td></td>
+						<td>Region:
+							<span class=select><br />
+								<select id="region-option-update" multiple="multiple" tabIndex="14">
+								</select>
+							</span>
+							<p><input type="checkbox" name="region-selectall-update" id="region-selectall-update" tabIndex="15" />
+							<span id="select-all">Select All</span></p>
+						</td>
+					</tr>
+					<tr>
+						<td class="password">Confirm Password:<br /><input type="password" name="confirmPassword-update" id="confirmPassword-update" tabIndex="5" /><br /><br /></td>
+						<td rowspan="4"></td>
+						<td rowspan="4">Sales_Level_6:
+							<span class=select><br />
+								<select id="sl6-option-update" multiple="multiple" tabIndex="16">
+								</select>
+							</span><br />
+							<p><input type="checkbox" name="sl6-selectall-update" id="sl6-selectall-update" tabIndex="17" />
+							<span id="select-all">Select All</span></p>
+							<br /><br />
+						</td>
+					</tr>
+					<tr>
+						<td>Email:<br /><input type="text" name="email-update" id="email-update" value="" tabIndex="6" /><br /><br /></td>
+					</tr>
+					<tr>
+						<td>Reporting To:<br /><input type="text" name="reportingTo-update" id="reportingTo-update" value="" tabIndex="7" />
+							<span id="span-rpt-exist-or-not" style="display: none">
+								<img id="img-rpt-exist-or-not" alt="Exists or Not" src="" />
+							</span> <br /><br />
+						</td>
+					</tr>
+					<tr>
+						<td>Location:
+							<span class=select><br />
+								<select id="location-option-update" tabIndex="8">
+									<option selected>Select Location</option>
+								</select>
+							</span><br /><br />
+						</td>
+					</tr>
+				</table>
+				<br />
+				<input type="button" id="submit-user-update" name="submit-user-update" value="Update" />
+				<input type="button" id="button-cancel-update" name="button-cancel-update" value="Cancel" />
+			</form>
+		</div>
+
+		<div id="addlocation" style="display: none">
+			<form action="#" method="POST" class="addlocation-form">
+				{% raw xsrf_form_html() %}
+				<h2>Add Location</h2><br />
+				<input type="hidden" id=hidden val="" />
+				Country:<br /><input type="text" name="country" id="country" value="" autofocus/><br /><br />
+				GTMu:<br /><input type="text" name="gtmu" id="gtmu" value="" /><br /><br />
+				Region:<br /><input type="text" name="region" id="region" value="" /><br /><br />
+				Location:<br /><input type="text" name="locationName" id="locationName" value="" /><br /><br />
+				{% try %}
+					{% if len(err) > 0 %}
+						<span class="error"><label>{{ err }}</label></span><br />
+					{% end %}
+				{% except %}
+				{% end %}
+				<input type="button" id="button-addlocation" name="button-addlocation" value="Add" />
+				<input type="button" id="button-cancel-location" name="button-cancel" value="Cancel" />
+			</form>
+		</div>
+		<div id="main-user-list">
+			<a href="#" id="image-adduser"><img class="image-add" id="image-adduser" src="{{static_url('icons/menu_icon_072.png')}}" alt="Add User Icon"/></a>
+			<a href="#" id="image-addlocation"><img class="image-add" id="image-addlocation" src="{{static_url('icons/menu_icon_053.png')}}" alt="Add Location Icon"/></a>
+			<span class=select>
+				<form action="/admin" method="GET" id="temp-form">
+				{% raw xsrf_form_html() %}
+					<select id="sort-option" name="sort-option">
+						<option selected>Sort Option</option>
+						{%for sort_option in sort_options%} 
+						<option>{{sort_option}}</option>
+						{% end %}
+					</select>
+				</form>
+			</span><br />
+			<span id="admin_error"></span>
+			<table class="list-table">
+				<caption>User List</caption>
+				<tr>
+					<th class="edit">Edit</th>
+					<th class="empty-cell"></th>
+					<th class="delete">Remove</th>
+					<th>Username</th>
+					<th>Name</th>
+					<th>Location</th>
+					<th class="reportingTo-cell">Reporting To</th>
+					<th class="accessibility-cell">Status</th>
+					<th>Created by</th>
+					<th>Created on</th>
+					<th>Edited by</th>
+					<th>Edited on</th>
+				</tr>
+				{% for user in allUsers %}
+					{% module User(user) %}	
+				{% end %}
+			</table>
+			<br /><hr /><br /><br />
+			<table class="list-table" id="location-table">
+				<caption>Location List</caption>
+				<tr>
+					<th class="edit">Edit</th>
+					<th class="empty-cell"></th>
+					<th class="delete">Remove</th>
+					<th>Country</th>
+					<th>GTMu</th>
+					<th>Location</th>
+					<th>Region</th>
+					<th>Status</th>
+					<th>Created by</th>
+					<th>Created on</th>
+					<th>Edited by</th>
+					<th>Edited on</th>
+				</tr>
+				{% for location in allLocations %}
+					{% module Location(location) %}	
+				{% end %}
+			</table>
+			
+		</div>
+    </div>
+	{% end %}

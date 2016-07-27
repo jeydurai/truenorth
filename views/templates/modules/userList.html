@@ -1,0 +1,22 @@
+<tr>
+	<td class="edit-cell" id="{{user['username']}}">
+		<a href="#" id="{{user['username']}}" class="edit_userdata" title="{{user['firstname']}} {{user['lastname']}}">
+			<img id="{{user['username']}}" src="{{static_url('icons/edit.png')}}" alt="Edit User Data" />
+		</a>
+	</td>
+	<td class="empty-cell"></td>
+	<td class="delete-cell" id="{{user['username']}}">
+		<a href="#" id="{{user['username']}}" class="delete_userdata" title="{{user['firstname']}} {{user['lastname']}}">
+			<img  id="{{user['username']}}" src="{{static_url('icons/delete.png')}}" alt="Delete User Data" />
+		</a>
+	</td>
+	<td>{{user['username']}}</td>
+	<td>{{user['firstname']}} {{user['lastname']}}</td>
+	<td>{{user['op_location']}}</td>
+	<td>{{user['reportingto']}}</td>
+	<td>{{user['approval_status']['description']}}</td>
+	<td>{{user['modified']['created_by']}}</td>
+	<td>{{user['modified']['created_on']}}</td>
+	<td>{{user['modified']['edited_by']}}</td>
+	<td>{{user['modified']['edited_on']}}</td>
+</tr>

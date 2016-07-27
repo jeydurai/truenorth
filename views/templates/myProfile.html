@@ -1,0 +1,23 @@
+{% extends "mainPage.html" %}
+{% block content %}
+	<div id="profile-container">	
+		<div id="left-panel-profile">
+            <div class="profile-menu" id="profile-menu-1">
+                <div class="profile-menu-container" id="profile-menu-container-1">
+                    <a href="#" id="myprofile-menubar"><img class="profile-menu-img" src="{{static_url('icons/myprofile.png')}}" alt="image" />
+                    <span class="profile-menu-span">My Profile</span>
+                    </a>
+                </div>
+                <div class="profile-menu-container" id="profile-menu-container-2">
+                    <a href="#" id="myteam-menubar"><img class="profile-menu-img" src="{{static_url('icons/menu_icon_067.png')}}" alt="image" />
+                    <span class="profile-menu-span">My Team</span>
+                    </a>
+                </div>
+            </div>
+		</div>
+		<div id="right-panel-profile">
+		</div>
+		<div id="middle-panel-profile">
+		</div>
+	</div>
+{% end %}

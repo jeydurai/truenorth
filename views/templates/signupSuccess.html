@@ -1,0 +1,12 @@
+{% extends "main.html" %}
+{% block header_script %}
+	<script type="application/javascript" src="{{static_url('js/signup.js')}}"></script>
+	<link type="text/css" rel="stylesheet" href="{{static_url('css/signup.css')}}"/>
+{% end %}
+{% block user_info %}
+{% end %}
+{% block content %}
+	<div id="main_signup">
+		<span>{{message}}</span>
+	</div>
+{% end %}

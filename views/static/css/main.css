@@ -1,0 +1,118 @@
+@CHARSET "ISO-8859-1";
+
+#dashboard-container {
+	margin-top: 5%;
+	margin-left: 1%;
+	margin-right: 1%;
+	text-align: center;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+.progress-bar2 {
+	position: relative;
+}
+
+#left-panel-main {
+	height:700px;
+	width: 15%;
+	border-color: #EEEEEE;
+	border-width: 2px;
+	border-style: dashed;
+	background-color: #FFFFFF;
+	float: left;
+}
+#middle-panel-main {
+	margin-left: 16%;
+	width: 63%;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+/* This CSS only prohibits the chart from overflowing*/
+.highcharts-container {
+	position: static !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+#right-panel-main {
+	height:800px;
+	width: 20%;
+	border-color: #EEEEEE;
+	border-width: 2px;
+	border-style: dashed;
+	background-color: #FFFFFF;
+	float: right;
+}
+
+#change-container {
+	margin: auto;
+	margin-top: 1%;
+	margin-left: 45%;
+	margin-right:20%
+}
+.menu {
+    padding-right: 5%;
+    margin-top : 10%;
+    margin-bottom : 2%;
+    border-style: none;
+    background-color: #FFFFFF;
+    font-weight: normal;
+    font-family: Sans-Serif, Georgia;
+    font-size: 10px;
+    color: #696969;
+    text-align: left;
+}
+.menu-container {
+    overflow-x : auto;
+    overflow-y : auto;
+    margin-bottom : 2%;
+    margin-left : 5%;
+    border-style: none;
+    background-color: #FFFFFF;
+    font-weight: normal;
+    text-align: left;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+.menu-container a {
+    text-decoration:none;
+    color: #696969;
+    padding : 0;
+}
+.menu-container a:hover {
+    background-color:#5A5097;
+    color: white;
+}
+.menu-container:hover {
+    background-color:#5A5097;
+    color: white;
+}
+span.menu-span {
+    padding-left: 5%;
+}
+.menu-container-header {
+    margin-bottom : 1%;
+    padding-top : 1%;
+    padding-left : 5%;
+    color : #5A5097;
+    font-family: verdana;
+    font-size: 12px;
+}
+.menu-img {
+    height: 10%;
+    width: 10%;
+    vertical-align:middle;
+}
+
+.button-img {
+    height: 5%;
+    width: 5%;
+    vertical-align:middle;
+}
+
+span.button-span {
+    font-size: 8px;
+    color: #696969;
+}
+

@@ -1,0 +1,33 @@
+{% extends "main.html" %}
+{% block user_info %}
+	{% try %}
+		{% if len(credentials) > 0 %}
+			<span class="userInfo">
+				<span><a href="#">{{credentials['firstname']}} {{credentials['lastname']}} </a>|</span>
+				<span><a href="/logout">Sign out </a></span>
+				<span>{{currentTime}}</span>
+			</span>
+		{% end %}
+	{% except %}
+	{% end %}
+{% end %}
+{% block content %}
+	<div id="main_adduser">
+		<form action="#" method="POST" class="addUser">
+			{% raw xsrf_form_html() %}
+			<h2>Add User</h2><br />
+			Username:<br /><input type="text" name="userName" value="" autofocus/><br /><br />
+			First Name:<br /><input type="text" name="firstName" value="" /><br /><br />
+			Last Name:<br /><input type="text" name="lastName" value="" /><br /><br />
+			Email ID:<br /><input type="text" name="emailID" value="" /><br /><br />
+			Access_Code:<br /><input type="text" name="accessCode" value="" /><br /><br />
+			{% try %}
+				{% if len(err) > 0 %}
+					<span class="error"><label>{{ err }}</label></span><br />
+				{% end %}
+			{% except %}
+			{% end %}
+			<input type="submit" name="submitAddUser" value="Add" />
+		</form>
+	</div>
+{% end %}

@@ -1,0 +1,26 @@
+<tr>
+	<td class="edit-cell-location" id="{{location['location']}}">
+		<a href="#" id="{{location['location']}}" class="edit_locationdata" title="{{location['location']}}">
+			<img  id="{{location['location']}}" src="{{static_url('icons/edit.png')}}" alt="Edit Location Data" />
+		</a>
+	</td>
+	<td class="empty-cell"></td>
+	<td class="delete-cell-location" id="{{location['location']}}">
+		<a href="#" id="{{location['location']}}" class="delete_locationdata" title="{{location['location']}}">
+			<img  id="{{location['location']}}" src="{{static_url('icons/delete.png')}}" alt="Delete Location Data" />
+		</a>
+	</td>
+	<td>{{location['country']}}</td>
+	<td>{{location['gtmu']}}</td>
+	<td>{{location['location']}}</td>
+	<td>{{location['region']}}</td>
+	{% if location['purged'] == 1 %}
+		<td>PURGED</td>
+	{% else %}
+		<td>ACTIVE</td>
+	{% end %}
+	<td>{{location['modified']['created_by']}}</td>
+	<td>{{location['modified']['created_on']}}</td>
+	<td>{{location['modified']['edited_by']}}</td>
+	<td>{{location['modified']['edited_on']}}</td>
+</tr>

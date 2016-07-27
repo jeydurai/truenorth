@@ -1,0 +1,115 @@
+@CHARSET "ISO-8859-1";
+
+#profile-container {
+	margin-top: 5%;
+	margin-left: 1%;
+	margin-right: 1%;
+	text-align: center;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+.progress-bar2 {
+	position: relative;
+}
+
+#left-panel-profile {
+	height:300px;
+	width: 15%;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+	/*border-color: #25383C;
+	border-width: 2px;
+	border-style: solid;*/
+	background-color: #EEEEEE;
+	float: left;
+}
+#middle-panel-profile {
+	margin-left: 16%;
+	width: 63%;
+    height: 700px;
+    border-left: solid #737373 1px;
+    border-top: solid #737373 1px;
+    border-bottom: solid #737373 1px;
+    border-right: solid #737373 1px;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+#right-panel-profile {
+	height:800px;
+	width: 20%;
+    border: none;
+	background-color: #EEEEEE;
+	float: right;
+}
+
+.profile-menu {
+    padding-right: 5%;
+    margin-top : 10%;
+    margin-bottom : 2%;
+    border-style: none;
+    background-color: #EEEEEE;
+    font-weight: normal;
+    font-family: Sans-Serif, Georgia;
+    font-size: 10px;
+    color: #696969;
+    text-align: left;
+}
+.profile-menu-container {
+    overflow-x : auto;
+    overflow-y : auto;
+    margin-bottom : 2%;
+    margin-left : 5%;
+    border-style: none;
+    background-color: #EEEEEE;
+    font-weight: normal;
+    text-align: left;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+.profile-menu-container a {
+    text-decoration:none;
+    color: #696969;
+    padding : 0;
+}
+.profile-menu-container a:hover {
+    background-color:#5A5097;
+    color: white;
+}
+.profile-menu-container:hover {
+    background-color:#5A5097;
+    color: white;
+}
+span.profile-menu-span {
+    padding-left: 5%;
+}
+.profile-menu-container-header {
+    margin-bottom : 1%;
+    padding-top : 1%;
+    padding-left : 5%;
+    color : #5A5097;
+    font-family: verdana;
+    font-size: 12px;
+}
+.profile-menu-img {
+    height: 10%;
+    width: 10%;
+    vertical-align:middle;
+}
+.myteam-img {
+    vertical-align:middle;
+}
+
+.button-img {
+    height: 5%;
+    width: 5%;
+    vertical-align:middle;
+}
+
+span.button-span {
+    font-size: 8px;
+    color: #696969;
+}
+
